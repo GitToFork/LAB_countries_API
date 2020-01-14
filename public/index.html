@@ -9,12 +9,23 @@
     <body>
         <div id="app">
             <h1>Country Selector App</h1>
-            <ul>
+            <form>
+                <select>
+                    <option v-for="(country, index) in allCountries" value="country">
+                        {{country.name}}
+                    </option>
+                </select>
+                <input type="submit" value="View Details" v-on:click.prevent="showSelectedCountry"/>
+
+            </form>
+
+            <!-- <ul>
                 <li v-for="(country, index) in allCountries">
                     <span>{{ country.name }}</span>
-                    <button v-on:click="showCountryData(index)">Show Country Data</button>
+                    <button v-on:click="isSelected = !isSelected">Show Country Data</button>
+                    <span v-if="isSelected">{{this.population}}</span>
                 </li>
-            </ul>
+            </ul> -->
         </div>
     </body>
 </html>

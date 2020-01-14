@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         data: {
             allCountries: null,
 
-            selectedCountry: null,
+           isSelected: true
 
         },
         mounted: function(){
@@ -18,10 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(response => response.json())
                 .then(jsOb => this.allCountries = jsOb)
             },
-                showCountryData: function(index){
-                    this.selectedCountry = this.allCountries[index];
-                    console.log(this.selectedCountry);
-                    
+
+            showSelectedCountry: function(){}
+
+                // showCountryData: function(index){
+                // const country = this.allCountries[index];
+                // this.selectedCountry = {
+                //     population: country.population,
+                //     flag: country.flag,
+                //     isSelected: true
+                
+                
+                }
                 }
 
             
